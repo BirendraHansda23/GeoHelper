@@ -1,0 +1,7 @@
+#ignore designs and assets files
+designs/
+assets/
+
+#ignore readme
+.readme.txt
+
