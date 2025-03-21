@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="preload" href="/assets/images/continents.jpg" as="image">
+    <link rel="stylesheet" href="/styles/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>GEO-HELPER</title>
+    <title>About Me</title>
 </head>
 <body>
-
-        <header class="index-header">
+        <header class="about-header">
             <div class="wrapper">
                 <nav>
                     <div class="logo">
@@ -28,49 +27,47 @@
  
             <!-- End of Nav Bar -->
 
-            <div class="hero">
+            <div class="wrapper">
+            <section class="about-body" id="about-body">
+                <!-- Left Section -->
                 <div class="left">
-                    <h1>DISCOVER THE WORLD.</h1>
-                    <p>Explore detailed information about every country.
-                    <br>Your go-to source for global knowledge.</p>
-                    <a href="#main-body" class="btn dark explore-btn">Explore</a>
-                </div>
+                    <div class="skill">
+                        <h2>I am a <span id="dynamic-heading"></span></h2>
+                        <p>I am a hardworking and curious engineer with a strong understanding of <strong>Web Development</strong> and <strong>User Interface Design</strong>. I have solid problem-solving skills and experience in <strong>HTML5, CSS, JavaScript</strong>, and <strong>backend technologies</strong>, allowing me to create <strong>responsive</strong> and <strong>user-friendly</strong> web experiences.</p>
 
+                        <p>As a <strong>Web Developer</strong>, I focus on building <strong>efficient</strong> and <strong>visually appealing</strong> websites. As a <strong>Programmer</strong>, I am skilled in <strong>C, C++, and Data Structures & Algorithms (DSA)</strong>, enabling me to tackle complex challenges.</p>
+
+                        <p>I am always eager to <strong>learn, improve my skills, and take on new challenges</strong> in the world of UI/UX design, web development, and software engineering.</p>
+
+                        <hr>
+                        <img src="./assets/icons/web-programming.png" alt="website logo"><img src="./assets/icons/binary.png" alt="website logo" align="right">
+                    </div>
+                    
+                    
+                </div>
+        
+                <!-- Right Section -->
                 <div class="right">
-                    <img src="/assets/images/map.jpg" alt="map" height="160px">
+                    <div class="intro-block">
+                        <img class="pfp" src="./assets/images/pfp2.jpg" alt="profile picture">
+                        <div class="contact-content">
+                            <h1>Get In Touch</h1>
+                            <p>I'm always looking for new opportunities to collaborate on innovative tech solutions. Feel free to reach out!</p>
+                            <a href="mailto:virhansda2302@gmail.com?subject=Contact via Geo-Helper">
+                                <button class="btn contact-btn" type="button">Contact Me</button>
+                            </a>
+                        </div>                      
+                    </div>
                 </div>
-            </div>
-
-            <!-- End of Hero Section -->
-            
+            </section>
+        </div>
         </header>
 
         <!-- End of Header -->
 
-        <div class="wrapper">
-            <section class="main-body" id="main-body">
-                <div class="left">
-                    <img src="/assets/images/map.jpg" alt="map">
-                </div>
-                <div class="right">
-                    <div class="search-container">
-                        <h2>Explore Countries</h2>
-                        <p>Try India, Russia, or Japan.</p>
+        
 
-                        <form method="GET" action="country.html">
-                            <div class="search-box">
-                                <input type="search" class="search-input" placeholder="Search..." name="country" id="nameInput" required>
-                                <button type="submit" class="search-button">
-                                    <img src="/assets/images/search.svg" alt="Search Icon">
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div> 
-            </section>
-        </div>
-
-        <!-- End of main body-->
+        <!-- footer -->
 
         <footer>
             <div class="wrapper">
@@ -129,10 +126,8 @@
                                 </svg>
                             </a>
                         </div>
-
                         
                     </div>
-
                 </div>
 
                 <hr>

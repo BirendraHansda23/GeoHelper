@@ -1,11 +1,10 @@
 :root {
-    --brown-color: #28221F;
+    --brown-color: #1e1c1b;
     --green-color: #7FBF3E;
     --sky-color: #96CBE3;
     --offwhite-color: #FFFEFC;
     --beige-color: #FEFDF9;
     scroll-behavior: smooth;
-
 
 }
 
@@ -31,7 +30,7 @@ body {
 
 /* header */
 
-header {
+.index-header {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -43,12 +42,13 @@ header {
 }
 
 header .wrapper {
-    background:var(--brown-color);
+
     margin: 0;
 
 }
 
 nav {
+    background:var(--brown-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,9 +63,14 @@ nav .logo {
     font-weight: 700;
     font-size: 36px;
     line-height: 47px;
-
     color: #FFFEFC;
 
+}
+
+nav .logo a {
+    color: #FFFEFC;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul {
@@ -146,9 +151,6 @@ nav ul li a:hover::after {
 
 
 
-
-/* main body*/
-
 /* Main Layout */
 .main-body {
     display: flex;
@@ -182,7 +184,7 @@ nav ul li a:hover::after {
 }
 
 
-.main-body h2 {
+.search-container h2 {
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: 700;
     font-size: 38px;
@@ -193,7 +195,7 @@ nav ul li a:hover::after {
     margin-bottom: 10px;
 }
 
-.main-body p {
+.search-container p {
     font-family: 'Lucida Sans', sans-serif;
     font-size: 12px;
     font-weight: 900;
@@ -224,6 +226,11 @@ nav ul li a:hover::after {
     font-size: 16px;
     border: none;
     outline: none;
+}
+
+.search-input:-webkit-autofill {
+    background-color: white !important;
+    box-shadow: 0 0 0px 1000px white inset !important; 
 }
 
 .search-button {
@@ -347,7 +354,7 @@ footer .copyright {
     text-align: center;
     margin-top: 40px;
     font-size: 14px;
-    opacity: 0.;
+    opacity: 0.8;
 }
 
 /* end of footer */
@@ -371,12 +378,12 @@ footer .copyright {
 }
 
 .explore-btn{
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Shadow */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
 }
 
 .btn:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Larger shadow on hover */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 

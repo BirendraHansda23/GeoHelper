@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="preload" href="/assets/images/continents.jpg" as="image">
+    <link rel="stylesheet" href="/styles/country.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>GEO-HELPER</title>
+    <title>Country Page</title>
 </head>
 <body>
 
-        <header class="index-header">
+        <header class="header-blank">
             <div class="wrapper">
                 <nav>
                     <div class="logo">
@@ -28,16 +28,15 @@
  
             <!-- End of Nav Bar -->
 
-            <div class="hero">
-                <div class="left">
-                    <h1>DISCOVER THE WORLD.</h1>
-                    <p>Explore detailed information about every country.
-                    <br>Your go-to source for global knowledge.</p>
-                    <a href="#main-body" class="btn dark explore-btn">Explore</a>
+            <div class="country-hero">
+                <div class="country-left">
+                    <div class="image-container">
+                        <img src="https://picsum.photos/200/300?india" alt="nations">
+                    </div>
                 </div>
 
-                <div class="right">
-                    <img src="/assets/images/map.jpg" alt="map" height="160px">
+                <div class="country-right">
+                    
                 </div>
             </div>
 
@@ -45,14 +44,19 @@
             
         </header>
 
+        <!-- Data Container -->
+
+        <section>
+            <div id="data-container">
+            <!-- Data will be dynamically inserted here -->
+            </div>
+        </section>
+
+
         <!-- End of Header -->
 
         <div class="wrapper">
-            <section class="main-body" id="main-body">
-                <div class="left">
-                    <img src="/assets/images/map.jpg" alt="map">
-                </div>
-                <div class="right">
+            <section class="country-main" id="country-main">
                     <div class="search-container">
                         <h2>Explore Countries</h2>
                         <p>Try India, Russia, or Japan.</p>
@@ -66,7 +70,6 @@
                             </div>
                         </form>
                     </div>
-                </div> 
             </section>
         </div>
 
@@ -142,6 +145,103 @@
             </div>
         </footer>
 
-        <script src="/scripts/script.js"></script>
+        
+        <script>
+    // Function to get query parameters from the URL
+    function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Fetch and display data based on the country name
+            async function fetchData(countryName) {
+                const dataContainer = document.getElementById("data-container");
+
+                try {
+                    const apiUrl = `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}`;
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error("Country not found. Please try again.");
+                    }
+
+                    const data = await response.json();
+                    const country = data[0]; // Get the first country in the response
+
+                    // Extract required fields (excluding the flag)
+                    const countryData = {
+                        Name: country.name.common,
+                        Capital: country.capital?.[0] || "N/A",
+                        Region: country.region,
+                        Area: country.area,
+                        Population: country.population,
+                        Timezone: country.timezones?.[0] || "N/A"
+                    };
+
+                    // Clear previous data
+                    dataContainer.innerHTML = "";
+
+                    // Create the two-column grid
+                    const grid = document.createElement("div");
+                    grid.className = "two-column-grid";
+
+                    // Left Column: Attributes
+                    const leftColumn = document.createElement("div");
+                    leftColumn.className = "left-column";
+
+                    // Right Column: Data
+                    const rightColumn = document.createElement("div");
+                    rightColumn.className = "right-column";
+
+                    // Add attributes and data to the columns
+                    for (const [key, value] of Object.entries(countryData)) {
+                        // Left Column: Attribute
+                        const attributeDiv = document.createElement("div");
+                        attributeDiv.className = "attribute";
+                        attributeDiv.textContent = `${key}:`;
+                        leftColumn.appendChild(attributeDiv);
+
+                        // Right Column: Data
+                        const dataDiv = document.createElement("div");
+                        dataDiv.className = "data";
+                        dataDiv.textContent = value;
+                        rightColumn.appendChild(dataDiv);
+                    }
+
+                    // Append columns to the grid
+                    grid.appendChild(leftColumn);
+                    grid.appendChild(rightColumn);
+
+                    // Append the grid to the container
+                    dataContainer.appendChild(grid);
+                } catch (error) {
+                    // Handle errors
+                    console.error("Error fetching data:", error);
+                    dataContainer.innerHTML = `<p class="error">${error.message}</p>`;
+                }
+            }
+
+            // Call the function to fetch and display data
+            const countryName = getQueryParam("country");
+            if (countryName) {
+                fetchData(countryName);
+            } else {
+                document.getElementById("data-container").innerHTML = `<p class="error">No country specified. Please go back and search for a country.</p>`;
+            }
+
+            // for image
+                            async function fetchCountryImage(countryName) {
+                    const imageContainer = document.getElementById("image-container");
+                    
+                    try {
+                        const response = await fetch(`https://source.unsplash.com/600x400/?${countryName}`);
+                        imageContainer.innerHTML = `<img src="${response.url}" alt="Scenic view of ${countryName}">`;
+                    } catch (error) {
+                        console.error("Error fetching country image:", error);
+                        imageContainer.innerHTML = "<p>Image not available</p>";
+                    }
+                }
+            
+                fetchCountryImage(countryName);
+        </script>
 </body>
 </html>
