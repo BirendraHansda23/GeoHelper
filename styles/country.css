@@ -22,18 +22,6 @@
     margin: 0 0;
 }
 
-.flag {
-    width: 40px;
-    height: auto;
-}
-
-.country-name {
-    font-size: 24px;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-
 .country-hero {
     display: flex;
     justify-content: space-between;
@@ -58,6 +46,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.country-left img {
+    padding: 10px;
+    border: 1px solid black;
+    flex-direction: column;
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.country-left h2 {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 125%;
+    color: var(--brown-color);
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .country-right {
@@ -66,6 +75,20 @@
     flex-direction: column;
     justify-content: center;
 }
+
+
+.country-right .image-container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 
 .data-container {
     font-family: "Inter-Regular", Helvetica;
