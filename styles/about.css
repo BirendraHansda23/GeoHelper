@@ -1,172 +1,174 @@
-
 .header-blank {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    width: 100%;
-    flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .body-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin: 40px 0;
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
 }
 
 /* about body */
 
 .about-body {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    flex-wrap: wrap;
-    color: var(--brown-color);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
+  color: var(--brown-color);
 }
 
 /* Left Section */
 .about-body .left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    max-width: 50%;
-    background: linear-gradient(to bottom right, var(--beige-color) 30%, whitesmoke);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  max-width: 50%;
+  background: linear-gradient(
+    to bottom right,
+    var(--beige-color) 30%,
+    whitesmoke
+  );
 }
 
 .about-body .left .skill {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .about-body .left h2 {
-    font-family: 'Trebuchet MS', sans-serif;
-    font-weight: 500;
-    font-size: 38px;
-    line-height: 125%;
-    color: var(--brown-color);
-    text-align: left;
-    margin-bottom: 10px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 125%;
+  color: var(--brown-color);
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 #dynamic-heading {
-    font-weight: bold;
-    transition: opacity 0.5s ease-in-out;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #dynamic-heading::after {
-    font-weight: 500;
-    content: "|";
-    animation: blink 0.8s infinite;
+  font-weight: 500;
+  content: "|";
+  animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
-
 .about-body .left p {
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.6;
-    padding-bottom: 16px;
-    text-align: left;
-    color: #3f3f3f;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  padding-bottom: 16px;
+  text-align: left;
+  color: #3f3f3f;
 }
 
 .about-body .left img {
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
 }
 
 .about-body .left hr {
-    border-top: 1px solid rgb(0, 0, 0);
-    margin: 30px 0;
-    opacity: 0.4;
+  border-top: 1px solid rgb(0, 0, 0);
+  margin: 30px 0;
+  opacity: 0.4;
 }
 
 /* Right Section */
 .about-body .right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    max-width: 50%;
-    background: linear-gradient(to top left, var(--beige-color) 30%, whitesmoke);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  max-width: 50%;
+  background: linear-gradient(to top left, var(--beige-color) 30%, whitesmoke);
 }
 
 .about-body .right .intro-block {
-    text-align: center; 
+  text-align: center;
 }
 
 .about-body .right .pfp {
-    width: 250px;
-    height: 250px;
-    border-radius: 20%;
-    margin-bottom: 10px;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
+  width: 250px;
+  height: 250px;
+  border-radius: 20%;
+  margin-bottom: 10px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
 }
 
 .about-body .right h1 {
-    font-family: 'Trebuchet MS', sans-serif;
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 125%;
-    color: var(--brown-color);
-    margin-bottom: 10px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 125%;
+  color: var(--brown-color);
+  margin-bottom: 10px;
 }
 
 .about-body .right p {
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 18px;
-    color: #555;
-    max-width: 400px;
-    margin: 0 auto;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 18px;
+  color: #555;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .about-body .right span u {
-    font-weight:bolder;
-    text-decoration: none;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 .contact-content p {
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.4;
-    padding-bottom: 16px;
-    color: #3f3f3f;
-    max-width: 600px;
-    margin: 0 auto 20px;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding-bottom: 16px;
+  color: #3f3f3f;
+  max-width: 600px;
+  margin: 0 auto 20px;
 }
-
 
 .contact-btn {
-    background: #2f3c46;
-    margin-top: 16px;
-    padding: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
+  background: #2f3c46;
+  margin-top: 16px;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-
 .contact-btn:hover {
-    background: #577583;
-    transition: 0.3s;
+  background: #577583;
+  transition: 0.3s;
 }
