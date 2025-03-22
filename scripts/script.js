@@ -26,11 +26,13 @@ function getQueryParam(param) {
 
 // Function to fetch and display country data
 async function fetchData(countryName) {
+  const heroSection = document.querySelector(".hero");
+  const countryHero = document.querySelector(".country-hero");
   const dataContainer = document.getElementById("data-container");
   const nameFlagContainer = document.getElementById("name-flag");
   const imageContainer = document.getElementById("image-container");
 
-  // Show loading message
+  // Show loading messages
   dataContainer.innerHTML = "<p>Loading country data...</p>";
   imageContainer.innerHTML = "<p>Loading image...</p>";
 
@@ -75,9 +77,9 @@ async function fetchData(countryName) {
 
     // Display country flag and name
     nameFlagContainer.innerHTML = `
-        <img src="${country.flags.svg}" alt="Flag of ${country.name.common}">
-        <h2>${country.name.common}</h2>
-      `;
+          <img src="${country.flags.svg}" alt="Flag of ${country.name.common}">
+          <h2>${country.name.common}</h2>
+        `;
 
     // Create the two-column grid
     const grid = document.createElement("div");
@@ -106,9 +108,16 @@ async function fetchData(countryName) {
     grid.appendChild(rightColumn);
     dataContainer.appendChild(grid);
 
-    // Make sections visible with smooth transition
-    document.querySelector(".country-hero").style.display = "flex";
-    document.querySelector("#data-container").style.display = "block";
+    // ✅ Hide the .hero section smoothly
+    heroSection.style.opacity = "0";
+    setTimeout(() => {
+      heroSection.style.display = "none";
+    }, 500);
+
+    // ✅ Show the .country-hero and #data-container
+    countryHero.style.display = "flex";
+    countryHero.style.opacity = "1"; // Ensure it's visible
+    dataContainer.style.display = "block";
   } catch (error) {
     console.error("Error fetching data:", error);
     dataContainer.innerHTML = `<p class="error">${error.message}</p>`;
@@ -118,7 +127,7 @@ async function fetchData(countryName) {
 // Function to fetch and display a random country image from Pexels
 async function fetchCountryImage(countryName) {
   const imageContainer = document.getElementById("image-container");
-  const apiKey = "";
+  const apiKey = ""; // Add your API key
 
   try {
     const response = await fetch(

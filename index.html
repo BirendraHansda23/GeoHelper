@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="preload" href="/assets/images/continents.jpg" as="image" />
+    <link
+      rel="preload"
+      href="https://plus.unsplash.com/premium_photo-1712496047863-f6d866b32f3d?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      as="image"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -49,6 +54,20 @@
 
     <!-- End of Hero Section -->
 
+    <section class="output">
+      <div class="country-hero">
+        <div class="country-left" id="name-flag"></div>
+
+        <div class="country-right">
+          <div class="image-container" id="image-container"></div>
+        </div>
+      </div>
+
+      <div id="data-container">
+        <!-- Data will be dynamically inserted here -->
+      </div>
+    </section>
+
     <div class="wrapper">
       <section class="country-main" id="country-search">
         <div class="search-container">
@@ -70,29 +89,14 @@
               </button>
             </div>
           </form>
+          <p style="font-weight: 400">
+            (Note: Please input correct names of the countries)
+          </p>
         </div>
       </section>
     </div>
 
     <!-- End of main body-->
-
-    <section>
-      <div class="country-hero">
-        <div class="country-left" id="name-flag"></div>
-
-        <div class="country-right">
-          <div class="image-container" id="image-container"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Data Container -->
-
-    <section>
-      <div id="data-container">
-        <!-- Data will be dynamically inserted here -->
-      </div>
-    </section>
 
     <footer>
       <div class="wrapper">
