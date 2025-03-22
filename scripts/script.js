@@ -24,8 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const apiKey = "iPviBdzTpSgdd2DDTfhA0Dw5RAo6qDqEHcXaGLlcRkvpNbnkTqwbfURX";
-
 // Get query parameter from the URL
 function getQueryParam(param) {
   return new URLSearchParams(window.location.search).get(param);
