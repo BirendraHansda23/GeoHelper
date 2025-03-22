@@ -29,29 +29,19 @@ body {
 
 /* header */
 
-.index-header {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-image: url(../assets/images/continents.jpg);
-  background-size: cover;
-  background-position: center 60%; /* Adjust the percentage as needed */
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
-
 header .wrapper {
   margin: 0;
 }
 
 nav {
+  height: 6vh;
   background: var(--brown-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   z-index: 100;
-  padding: 0 10px;
+  padding: 0 14px;
 }
 
 nav .logo {
@@ -101,15 +91,21 @@ nav ul li a:hover::after {
 }
 
 /* Hero Section */
-
 .hero {
-  display: flex;
-  height: 100vh;
+  margin: 0;
+  padding: 0 0 50px 50px;
+  height: 94vh;
   width: 100%;
+
+  background-image: url(../assets/images/continents.jpg);
+  background-size: cover;
+  background-position: center 70%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 50px;
-  padding-left: 50px;
 }
 
 .hero .left h1 {
@@ -340,6 +336,7 @@ nav ul li a:hover::after {
 footer {
   background: var(--brown-color);
   color: #ede0d4;
+  height: 50vh;
   margin-top: 0;
   padding: 60px 60px;
 }

@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+require("dotenv").config();
+const apiKey = process.env.PEXELS_API_KEY;
+
 // Function to get query parameters from the URL
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -115,7 +118,7 @@ async function fetchData(countryName) {
 // Function to fetch and display a random country image from Pexels
 async function fetchCountryImage(countryName) {
   const imageContainer = document.getElementById("image-container");
-  const apiKey = "iPviBdzTpSgdd2DDTfhA0Dw5RAo6qDqEHcXaGLlcRkvpNbnkTqwbfURX";
+  const apiKey = "";
 
   try {
     const response = await fetch(
