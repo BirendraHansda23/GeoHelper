@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,7 +37,7 @@
             Explore detailed information about every country. <br />Your go-to
             source for global knowledge.
           </p>
-          <a href="#main-body" class="btn dark explore-btn">Explore</a>
+          <a href="#country-search" class="btn dark explore-btn">Explore</a>
         </div>
 
         <div class="right">
@@ -51,36 +51,49 @@
     <!-- End of Header -->
 
     <div class="wrapper">
-      <section class="main-body" id="main-body">
-        <div class="left">
-          <img src="/assets/images/map.jpg" alt="map" />
-        </div>
-        <div class="right">
-          <div class="search-container">
-            <h2>Explore Countries</h2>
-            <p>Try India, Russia, or Japan.</p>
+      <section class="country-main" id="country-search">
+        <div class="search-container">
+          <h2>Explore Countries</h2>
+          <p>Try India, Russia, or Japan.</p>
 
-            <form method="GET" action="country.html">
-              <div class="search-box">
-                <input
-                  type="search"
-                  class="search-input"
-                  placeholder="Search..."
-                  name="country"
-                  id="nameInput"
-                  required
-                />
-                <button type="submit" class="search-button">
-                  <img src="/assets/images/search.svg" alt="Search Icon" />
-                </button>
-              </div>
-            </form>
-          </div>
+          <form id="searchForm">
+            <div class="search-box">
+              <input
+                type="search"
+                class="search-input"
+                placeholder="Search..."
+                name="country"
+                id="nameInput"
+                required
+              />
+              <button type="submit" class="search-button">
+                <img src="/assets/images/search.svg" alt="Search Icon" />
+              </button>
+            </div>
+          </form>
         </div>
       </section>
     </div>
 
     <!-- End of main body-->
+
+    <section>
+      <div class="country-hero">
+        <div class="country-left" id="name-flag"></div>
+
+        <div class="country-right">
+          <div class="image-container" id="image-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Container -->
+
+    <section>
+      <div id="data-container">
+        <!-- Data will be dynamically inserted here -->
+      </div>
+    </section>
 
     <footer>
       <div class="wrapper">
