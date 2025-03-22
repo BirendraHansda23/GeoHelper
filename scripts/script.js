@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add("loaded");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const countryName = getQueryParam("country");
   const countryHero = document.querySelector(".country-hero");
   const dataContainer = document.querySelector("#data-container");

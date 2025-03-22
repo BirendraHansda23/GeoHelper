@@ -13,13 +13,39 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00000033;
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00000066;
 }
 
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+body.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .wrapper {
@@ -286,7 +312,7 @@ nav ul li a:hover::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70vh;
+  height: 50vh;
   width: 100%;
   margin: 0 0;
 }
@@ -295,7 +321,7 @@ nav ul li a:hover::after {
 .country-right {
   flex: 1;
   padding: 20px;
-  height: 70vh;
+  height: 50vh;
   border: 1px solid #000000;
   background-color: var(--beige-color);
 }
@@ -311,21 +337,19 @@ nav ul li a:hover::after {
 
 .country-left img {
   padding: 10px;
-  border: 1px solid black;
+  border: 1px dotted black;
   flex-direction: column;
-  width: 250px;
-  height: auto;
-  margin-bottom: 10px;
+  width: auto;
+  max-height: 150px;
 }
 
 .country-left h2 {
   font-family: "Trebuchet MS", sans-serif;
   font-weight: 800;
   font-size: 48px;
-  line-height: 125%;
   color: var(--brown-color);
   width: 100%;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .country-right {
@@ -336,7 +360,7 @@ nav ul li a:hover::after {
 }
 
 .country-right .image-container {
-  height: 50vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -438,6 +462,7 @@ footer .social a:hover {
 footer hr {
   border-top: 1px solid whitesmoke;
   margin: 30px 0;
+  opacity: 0.8;
 }
 
 footer .copyright {
