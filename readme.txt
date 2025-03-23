@@ -8,8 +8,7 @@ Geo-Helper
 
 # APIs used
 Main : "https://restcountries.com"
-Image : "https://api.unsplash.com"
-Flags : "https://flagsapi.com"
+Image : "https://www.pexels.com/api/"
 
 Log:
 
@@ -24,3 +23,11 @@ Getting output data successfully
 • 14/02/2025
 Completed the main header section
 Started the main body styling
+
+• 21/03/2025
+Completed the Frontend 
+Features are working
+
+• 22/03/2025
+Deployed V1.0 on Vercel
+All set up (except the about project page)

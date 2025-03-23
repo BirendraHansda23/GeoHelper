@@ -130,7 +130,7 @@ nav ul li a:hover::after {
   padding: 0 0 50px 50px;
   height: 94vh;
   width: 100%;
-  background-image: url(../assets/images/continents.webp); /* Use WebP format */
+  background-image: url(../assets/images/continents.webp);
   background-size: cover;
   background-position: center 70%;
   background-repeat: no-repeat;
@@ -165,7 +165,7 @@ nav ul li a:hover::after {
 
 .hero .right img {
   height: 128px;
-  width: auto; /* Prevent layout shifts */
+  width: auto;
 }
 
 /* MAIN LAYOUT          */
@@ -343,7 +343,7 @@ nav ul li a:hover::after {
   border: 1px dotted black;
   width: auto;
   max-height: 150px;
-  height: auto; /* Prevent layout shifts */
+  height: auto;
 }
 
 .country-left h2 {
