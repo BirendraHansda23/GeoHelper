@@ -1,5 +1,8 @@
 # GeoHelper 🌍  
 
+## 🔗 Live Demo  
+[GeoHelper Live](https://geo-helper-sepia.vercel.app/)
+
 **GeoHelper** is a lightweight and efficient web-based tool that helps users get relevant geographical information.  
 
 ## 🚀 Features  
@@ -12,15 +15,12 @@
 - **Deployment:** Vercel  
 
 ## 📸 Screenshots  
-*![geo-helper-sepia vercel app_index html_country=India (1)](https://github.com/user-attachments/assets/b1be2c88-fad1-4965-acc6-3c1b97c98002)
-*  
-
-## 🔗 Live Demo  
-[GeoHelper Live](https://geo-helper-sepia.vercel.app/)
+![geo-helper-sepia vercel app_index html_country=India (1)](https://github.com/user-attachments/assets/b1be2c88-fad1-4965-acc6-3c1b97c98002)
+<img src="https://github.com/user-attachments/assets/b1be2c88-fad1-4965-acc6-3c1b97c98002" alt="Project Screenshot" width="400">
 
 ---
 
-### 🚀 Installation & Usage  
+## 🚀 Installation & Usage  
 
 1. **Clone the Repository**  
    ```bash
