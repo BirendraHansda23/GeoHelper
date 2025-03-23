@@ -3,7 +3,7 @@
 **GeoHelper** is a lightweight and efficient web-based tool that helps users get relevant geographical information.  
 
 ## 🚀 Features  
-- **Location Detection** – Instantly fetch and display your current geographical coordinates.   
+- **Location Detection** – Instantly fetch and display any country's geographical information.   
 - **User-Friendly Interface** – Simple and intuitive UI for a seamless experience.  
 
 ## 🛠️ Technologies Used  
