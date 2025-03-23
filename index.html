@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
+    <!-- Preload critical resources -->
     <link rel="preload" href="/assets/images/continents.jpg" as="image" />
     <link
       rel="preload"
@@ -28,7 +29,6 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="#">About Project</a></li>
-            <li><a href="about.html">About Me</a></li>
           </ul>
         </nav>
       </div>
@@ -47,7 +47,13 @@
         </div>
 
         <div class="right">
-          <img src="/assets/images/map.jpg" alt="map" height="160px" />
+          <!-- Lazy load non-critical image -->
+          <img
+            src="/assets/images/map.jpg"
+            alt="map"
+            height="160px"
+            loading="lazy"
+          />
         </div>
       </section>
     </div>
@@ -104,8 +110,8 @@
             <h3>Quick Links</h3>
             <ul>
               <li><a href="index.html">Explore</a></li>
-              <li><a href="about.html">About Me</a></li>
-              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="">About Project</a></li>
+              <!-- <li><a href="feedback.html">Feedback</a></li> -->
             </ul>
           </div>
 
@@ -133,6 +139,9 @@
           <div class="links">
             <h3>Contact Me</h3>
             <ul>
+              <li>
+                <a href="about.html">Meet the Dev</a>
+              </li>
               <li>
                 Mail:
                 <a
