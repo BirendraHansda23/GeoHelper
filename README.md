@@ -15,8 +15,7 @@
 - **Deployment:** Vercel  
 
 ## 📸 Screenshots  
-![geo-helper-sepia vercel app_index html_country=India (1)](https://github.com/user-attachments/assets/b1be2c88-fad1-4965-acc6-3c1b97c98002)
-<img src="https://github.com/user-attachments/assets/b1be2c88-fad1-4965-acc6-3c1b97c98002" alt="Project Screenshot" width="400">
+<img src="https://github.com/user-attachments/assets/b1be2c88-fad1-4965-acc6-3c1b97c98002" alt="Project Screenshot" width="400" align="center">
 
 ---
 
