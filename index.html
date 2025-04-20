@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/styles.css" />
     <!-- Preload critical resources -->
     <link rel="preload" href="/assets/images/continents.jpg" as="image" />
     <link
@@ -17,55 +16,47 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>GEOHELPER</title>
   </head>
-  <body>
-    <header>
-      <div class="wrapper">
-        <nav>
-          <div class="logo">
-            <a href="index.html">GEOHELPER.</a>
-          </div>
-          <ul>
-            <li>
-              <a
-                target="_blank"
-                href="https://github.com/BirendraHansda23/GeoHelper"
-                >About Project</a
-              >
-            </li>
-          </ul>
-        </nav>
+  <body class="m-0 p-0 font-[Roboto]">
+    <nav
+      class="px-3 py-2 text-[#f8f8f8] bg-stone-900 max-w-full h-[6vh] my-0 mx-auto leading-none flex justify-between items-center"
+    >
+      <div class="font-[Segoe_UI] text-4xl font-bold">
+        <a href="index.html">GEOHELPER.</a>
       </div>
-    </header>
+      <div class="font-inter text-lg">
+        <a target="_blank" href="https://github.com/BirendraHansda23/GeoHelper"
+          >About Project</a
+        >
+      </div>
+    </nav>
 
     <!-- End of Header -->
-    <div class="wrapper">
-      <section class="hero">
-        <div class="left">
-          <h1>DISCOVER THE WORLD.</h1>
-          <p>
-            Explore detailed information about every country. <br />Your go-to
-            source for global knowledge.
-          </p>
+    <section
+      class="w-full my-0 mx-auto px-10 h-[94vh] bg-[url(/assets/images/continents.jpg)] bg-cover bg-[center_70%] flex items-center"
+    >
+      <div class="font-inter text-amber-50">
+        <h1 class="font-bold text-5xl leading-[125%]">DISCOVER THE WORLD.</h1>
+        <p class="text-xl leading-[150%]">
+          Explore detailed information about every country. <br />Your go-to
+          source for global knowledge.
+        </p>
+        <div>
           <a href="#country-search" class="btn dark explore-btn">Explore</a>
         </div>
+      </div>
 
-        <div class="right">
-          <!-- Lazy load non-critical image -->
-          <img
-            src="/assets/images/map.jpg"
-            alt="map"
-            height="160px"
-            loading="lazy"
-          />
-        </div>
-      </section>
-    </div>
+      <div class="right">
+        <!-- Lazy load non-critical image -->
+        <img src="" alt="map" height="160px" loading="lazy" />
+      </div>
+    </section>
 
     <!-- End of Hero Section -->
 
-    <div class="wrapper">
+    <div class="max-w-full my-0 mx-auto">
       <section class="country-main" id="country-search">
         <div class="search-container">
           <h2>Explore Countries</h2>
@@ -109,7 +100,7 @@
     <!-- End of main body-->
 
     <footer>
-      <div class="wrapper">
+      <div class="max-w-full my-0 mx-auto">
         <div class="links-container">
           <div class="links">
             <h3>Quick Links</h3>
