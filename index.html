@@ -25,10 +25,11 @@
     <title>GEOHELPER</title>
   </head>
   <body class="m-0 p-0 font-[Roboto]">
+    <!-- Start of body -->
     <nav
-      class="px-3 py-2 text-[#f8f8f8] bg-stone-900 max-w-full my-0 mx-auto leading-none flex justify-between items-center"
+      class="px-3 py-2 text-[#f8f8f8] bg-stone-900 max-w-full my-0 mx-auto leading-none flex flex-col gap-3 justify-between items-center sm:flex-row"
     >
-      <div class="font-[Segoe_UI] text-4xl font-bold">
+      <div class="font-[Segoe_UI] text-3xl font-bold">
         <a href="index.html">GEOHELPER.</a>
       </div>
       <div class="font-inter text-lg">
@@ -72,6 +73,7 @@
             src="/assets/images/earth.avif"
             class="w-[100vw] h-[100vh] object-cover"
             alt="earth-background"
+            loading="lazy"
           />
         </picture>
         <div class="absolute inset-0 opacity-90 backdrop-blur-2xl"></div>
@@ -115,25 +117,34 @@
       </div>
     </section>
 
-    <section class="output block" id="output">
-      <div class="country-hero">
-        <div class="country-left" id="name-flag"></div>
-
-        <div class="country-right">
-          <div class="image-container" id="image-container"></div>
+    <!-- Output section-->
+    <section class="m-0 p-0 font-[Roboto] flex flex-col hidden" id="output">
+      <div class="p-0 bg-amber-50 flex">
+        <div
+          class="h-[50vh] w-4/10 border-black border-2 m-0 flex flex-row justify-center items-center"
+        >
+          <figure class="p-2">
+            <img src="" alt="country-flag" id="flag" />
+          </figure>
+          <h2 id="country-name">India</h2>
+        </div>
+        <div
+          class="h-[50vh] w-6/10 border-black border-2 border-l-0 m-0 flex justify-center items-center"
+        >
+          <figure class="p-2">
+            <img src="" alt="country-image" id="country-image" />
+          </figure>
         </div>
       </div>
 
-      <div id="data-container">
-        <!-- Data will be dynamically inserted here -->
-      </div>
+      <div class="felx flex-row gap-2" id="output-table"></div>
     </section>
     <!-- End of main body-->
 
     <footer
       class="p-[50px] pb-[30px] font-[Segoe_UI] text-[#f8f8f8] bold bg-stone-900 max-w-full my-0 mx-auto leading-none"
     >
-      <div class="flex flex-col gap-5 justify-between md:flex-row">
+      <div class="flex flex-col gap-5 justify-between sm:flex-row">
         <div>
           <h3 class="mb-[24px] text-2xl text-[#ede0d4] font-semibold">
             Quick Links

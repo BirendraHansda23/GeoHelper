@@ -110,7 +110,7 @@ hr {
   align-items: center;
   padding: 40px;
   max-width: 50%;
-  background: linear-gradient(to top left, var(--beige-color) 30%, whitesmoke);
+  background: linear-gradient(to top left, var(--beige-color) 30%, #f5f5f5);
 }
 
 .about-body .right .intro-block {
@@ -160,7 +160,7 @@ hr {
 }
 
 .contact-btn {
-  background: #2f3c46;
+  background: #39434a;
   margin-top: 16px;
   padding: 16px;
   border: none;
