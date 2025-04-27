@@ -86,7 +86,7 @@
           Try India, Russia, or Japan.
         </p>
 
-        <form id="searchForm" action="#output">
+        <form id="searchForm" action="#output-container">
           <div
             class="search-box w-[100%] flex items-center justify-between border-2 border-gray-200 rounded-lg bg-white overflow-hidde drop-shadow-sm drop-shadow-stone-700"
           >
@@ -118,26 +118,27 @@
     </section>
 
     <!-- Output section-->
-    <section class="m-0 p-0 font-[Roboto] flex flex-col hidden" id="output">
+    <section
+      class="m-0 p-0 font-[Roboto] flex flex-col hidden"
+      id="output-container"
+    >
       <div class="p-0 bg-amber-50 flex">
         <div
-          class="h-[50vh] w-4/10 border-black border-2 m-0 flex flex-row justify-center items-center"
+          class="h-[50vh] w-2/5 border-black border-2 m-0 flex flex-col justify-center items-center"
         >
-          <figure class="p-2">
-            <img src="" alt="country-flag" id="flag" />
-          </figure>
-          <h2 id="country-name">India</h2>
+          <div class="p-2" id="flag-container"></div>
+          <h2 id="flag-title" class="font-bold text-2xl"></h2>
         </div>
         <div
-          class="h-[50vh] w-6/10 border-black border-2 border-l-0 m-0 flex justify-center items-center"
+          class="h-[50vh] w-3/5 border-black border-2 border-l-0 m-0 flex justify-center items-center"
         >
-          <figure class="p-2">
+          <figure class="p-">
             <img src="" alt="country-image" id="country-image" />
           </figure>
         </div>
       </div>
 
-      <div class="felx flex-row gap-2" id="output-table"></div>
+      <div class="flex flex-col gap-2 pt-2 pb-2" id="output-table"></div>
     </section>
     <!-- End of main body-->
 
@@ -193,7 +194,7 @@
           </h3>
           <ul>
             <li class="text-white text-sm my-[16px]">
-              <a target="_blank" href="about.html">Meet the Dev</a>
+              <a href="about.html">Meet the Dev</a>
             </li>
             <li class="text-white text-sm my-[16px]">
               Mail:
@@ -291,7 +292,7 @@
       <hr class="my-6 opacity-70" />
 
       <p class="text-center text-sm opacity-70">
-        This website is developed by Birendra Kumar Hansda © 2025
+        This website is developed with ❤️‍🔥 by Birendra Kumar Hansda © 2025
       </p>
     </footer>
 

@@ -1,187 +1,136 @@
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.classList.add("loaded");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const countryName = getQueryParam("country");
-  const countryHero = document.querySelector(".country-hero");
-  const dataContainer = document.querySelector("#data-container");
-
-  if (countryHero) countryHero.style.display = "none";
-  if (dataContainer) dataContainer.style.display = "none";
-
-  if (countryName) {
-    if (!isValidCountryName(countryName)) {
-      showErrorNotification("Invalid country name. Please enter a valid name.");
-      return;
-    }
-    fetchData(countryName);
-    fetchCountryImage(countryName);
-  } else {
-    showErrorNotification(
-      "No country specified. Please enter a valid country name."
-    );
-  }
-});
-
-const apiKey = "iPviBdzTpSgdd2DDTfhA0Dw5RAo6qDqEHcXaGLlcRkvpNbnkTqwbfURX";
-
-// Get query parameter from the URL
-function getQueryParam(param) {
-  return new URLSearchParams(window.location.search).get(param);
-}
-
-// Validate country name (should contain letters only)
-function isValidCountryName(name) {
-  return /^[a-zA-Z\s-]+$/.test(name.trim());
-}
-
-async function fetchData(countryName) {
-  const heroSection = document.querySelector(".hero");
-  const countryHero = document.querySelector(".country-hero");
-  const dataContainer = document.getElementById("data-container");
-  const nameFlagContainer = document.getElementById("name-flag");
-  const imageContainer = document.getElementById("image-container");
-  const outputSection = document.getElementById("output");
-
-  if (!dataContainer || !nameFlagContainer || !imageContainer) return;
-
-  dataContainer.innerHTML = "<p>Loading country data...</p>";
-  imageContainer.innerHTML = "<p>Loading image...</p>";
-
-  try {
-    const apiUrl = `https://restcountries.com/v3.1/name/${encodeURIComponent(
-      countryName
-    )}`;
-    const countryResponse = await fetch(apiUrl);
-    if (!countryResponse.ok)
-      throw new Error("Country not found. Please try again.");
-
-    const data = await countryResponse.json();
-    if (!data || data.length === 0)
-      throw new Error("Invalid country name. Try another one.");
-
-    const country = data[0];
-
-    const countryData = {
-      Name: country.name.common,
-      Capital: country.capital?.[0] || "N/A",
-      Region: country.region,
-      "Area (sq km)": country.area.toLocaleString(),
-      Population: country.population.toLocaleString(),
-      Timezone: country.timezones?.[0] || "N/A",
-      Languages: country.languages
-        ? Object.values(country.languages).join(", ")
-        : "N/A",
-      Currency: country.currencies
-        ? Object.values(country.currencies)
-            .map((c) => c.name)
-            .join(", ")
-        : "N/A",
-    };
-
-    nameFlagContainer.innerHTML = `
-      <img src="${country.flags.svg}" alt="Flag of ${country.name.common}">
-      <h2>${country.name.common}</h2>
-    `;
-
-    const grid = document.createElement("div");
-    grid.className = "two-column-grid";
-
-    const leftColumn = document.createElement("div");
-    leftColumn.className = "left-column";
-    const rightColumn = document.createElement("div");
-    rightColumn.className = "right-column";
-
-    for (const [key, value] of Object.entries(countryData)) {
-      const attributeDiv = document.createElement("div");
-      attributeDiv.className = "attribute";
-      attributeDiv.textContent = `${key}:`;
-      leftColumn.appendChild(attributeDiv);
-
-      const dataDiv = document.createElement("div");
-      dataDiv.className = "data";
-      dataDiv.textContent = value;
-      rightColumn.appendChild(dataDiv);
-    }
-
-    grid.appendChild(leftColumn);
-    grid.appendChild(rightColumn);
-    dataContainer.innerHTML = "";
-    dataContainer.appendChild(grid);
-
-    if (countryHero) {
-      countryHero.style.display = "flex";
-      countryHero.style.opacity = "1";
-    }
-    dataContainer.style.display = "block";
-
-    // Scroll to #output only if valid data is loaded
-    if (outputSection) {
-      setTimeout(() => {
-        outputSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 1000);
-    }
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    dataContainer.innerHTML = `<p class="error">${error.message}</p>`;
-  }
-}
-
-async function fetchCountryImage(countryName) {
-  const imageContainer = document.getElementById("image-container");
-  if (!imageContainer) return;
-
-  try {
-    const response = await fetch(
-      `https://api.pexels.com/v1/search?query=${countryName}&per_page=15`,
-      { headers: { Authorization: apiKey } }
-    );
-
-    if (!response.ok) throw new Error("Failed to fetch image.");
-
-    const data = await response.json();
-    if (data.photos.length > 0) {
-      const randomIndex = Math.floor(Math.random() * data.photos.length);
-      const imageUrl = data.photos[randomIndex].src.large;
-      imageContainer.innerHTML = `<img src="${imageUrl}" alt="Scenic view of ${countryName}">`;
-    } else {
-      imageContainer.innerHTML = "<p>No image found.</p>";
-    }
-  } catch (error) {
-    console.error("Error fetching country image:", error);
-    imageContainer.innerHTML = "<p>Image not available.</p>";
-  }
-}
-
-// Dynamic Heading Animation
 document.addEventListener("DOMContentLoaded", () => {
-  const dynamicText = document.getElementById("dynamic-heading");
-  if (!dynamicText) return;
+  const countryName = new URLSearchParams(window.location.search).get(
+    "country"
+  );
 
-  const words = ["Web Developer.", "Programmer.", "Web Designer."];
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+  function isValidCountryName(name) {
+    const regex = /^[A-Za-z\s-]+$/;
+    return regex.test(name.trim());
+  }
 
-  const typeEffect = () => {
-    const currentWord = words[wordIndex];
-    const currentChar = currentWord.substring(0, charIndex);
+  if (isValidCountryName(countryName)) {
+    async function fetchData(countryName) {
+      try {
+        const flagContainer = document.getElementById("flag-container");
+        const flagTitle = document.getElementById("flag-title");
+        const outputTable = document.getElementById("output-table");
+        const outputContainer = document.getElementById("output-container");
 
-    dynamicText.innerHTML = currentChar;
+        const apiUrl = `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`;
+        const response = await fetch(apiUrl);
 
-    if (!isDeleting && charIndex < currentWord.length) {
-      charIndex++;
-      setTimeout(typeEffect, 50);
-    } else if (isDeleting && charIndex > 0) {
-      charIndex--;
-      setTimeout(typeEffect, 50);
-    } else {
-      isDeleting = !isDeleting;
-      wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-      setTimeout(typeEffect, 1000);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const country = data[0];
+
+        const countryData = {
+          Name: country.name.common,
+          Capital: country.capital?.[0] || "N/A",
+          Region: country.region,
+          Area: country.area.toLocaleString(),
+          Population: country.population.toLocaleString(),
+          Timezone: country.timezones?.[0] || "N/A",
+          Languages: country.languages
+            ? Object.values(country.languages).join(", ")
+            : "N/A",
+          Currencies: country.currencies
+            ? Object.values(country.currencies)
+                .map((curr) => curr.name)
+                .join(", ")
+            : "N/A",
+        };
+
+        flagContainer.innerHTML = `
+          <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" id="flag" class="h-[100px] object-contain"/>
+        `;
+
+        flagTitle.textContent = `${country.name.common}`;
+
+        function giveOutput() {
+          outputContainer.classList.toggle("hidden");
+
+          outputTable.innerHTML = `
+            <div class="row">
+              <div class="title">Name:</div>
+              <div class="data">${countryData.Name}</div>
+            </div>
+            <div class="row">
+              <div class="title">Capital:</div>
+              <div class="data">${countryData.Capital}</div>
+            </div>
+            <div class="row">
+              <div class="title">Region:</div>
+              <div class="data">${countryData.Region}</div>
+            </div>
+            <div class="row">
+              <div class="title">Area (sq km):</div>
+              <div class="data">${countryData.Area}</div>
+            </div>
+            <div class="row">
+              <div class="title">Population:</div>
+              <div class="data">${countryData.Population}</div>
+            </div>
+            <div class="row">
+              <div class="title">Timezone:</div>
+              <div class="data">${countryData.Timezone}</div>
+            </div>
+            <div class="row">
+              <div class="title">Languages:</div>
+              <div class="data">${countryData.Languages}</div>
+            </div>
+            <div class="row">
+              <div class="title">Currencies:</div>
+              <div class="data">${countryData.Currencies}</div>
+            </div>
+          `;
+
+          const rows = document.querySelectorAll(".row");
+          rows.forEach((row) =>
+            row.classList.add("flex", "gap-[18px]", "py-2")
+          );
+
+          const titles = document.querySelectorAll(".title");
+          titles.forEach((title) =>
+            title.classList.add(
+              "w-2/5",
+              "font-semibold",
+              "text-lg",
+              "text-right",
+              "p-3",
+              "bg-gradient-to-l",
+              "from-[#f5f5f5]",
+              "to-[#ffffff]",
+              "text-black"
+            )
+          );
+
+          const datas = document.querySelectorAll(".data");
+          datas.forEach((data) =>
+            data.classList.add(
+              "w-3/5",
+              "font-normal",
+              "text-lg",
+              "text-left",
+              "p-3",
+              "bg-gradient-to-r",
+              "from-[#f5f5f5]",
+              "to-[#ffffff]",
+              "text-black"
+            )
+          );
+        }
+
+        giveOutput();
+      } catch (error) {
+        console.error("Error:", error);
+      }
     }
-  };
 
-  typeEffect();
+    fetchData(countryName);
+  } else {
+    alert("Invalid country name. Please enter a valid country name.");
+  }
 });
