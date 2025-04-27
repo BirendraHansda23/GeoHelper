@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function giveOutput() {
           outputContainer.classList.toggle("hidden");
+          document
+            .getElementById("output-container")
+            .scrollIntoView({ behavior: "smooth" });
 
           outputTable.innerHTML = `
             <div class="row">
