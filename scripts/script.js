@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             title.classList.add(
               "w-2/5",
               "font-semibold",
-              "text-lg",
+              "text-md",
               "text-right",
               "p-3",
               "bg-gradient-to-l",
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data.classList.add(
               "w-3/5",
               "font-normal",
-              "text-lg",
+              "text-md",
               "text-left",
               "p-3",
               "bg-gradient-to-r",
