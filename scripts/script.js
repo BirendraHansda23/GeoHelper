@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function fetchCountryImages(countryName) {
-  const query = `${countryName} scenic landscape`;
+  const query = `famous places in ${countryName}`;
   const apiKey = "iPviBdzTpSgdd2DDTfhA0Dw5RAo6qDqEHcXaGLlcRkvpNbnkTqwbfURX";
-  const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=5`;
+  const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=10`;
 
   try {
     const response = await fetch(url, {
