@@ -119,22 +119,39 @@
 
     <!-- Output section-->
     <section
-      class="sticky m-0 p-0 font-[Roboto] flex flex-col hidden"
+      class="sticky bg-amber-50 m-0 p-0 font-[Roboto] flex flex-col hidden"
       id="output-container"
     >
-      <div class="p-0 bg-amber-50 flex flex-wrap sm:flex-nowrap">
+      <div class="flex flex-wrap sm:flex-nowrap p-0">
+        <!-- Flag Container -->
         <div
-          class="h-[50vh] w-full sm:w-2/5 border-black border-2 m-0 flex flex-col justify-center items-center"
+          class="w-full sm:w-2/5 h-[60vh] border-2 border-black m-0 flex flex-col justify-center items-center"
         >
-          <div class="p-2" id="flag-container"></div>
-          <h2 id="flag-title" class="font-bold text-2xl"></h2>
+          <div id="flag-container" class="p-3 border-1">
+            <img
+              src=""
+              alt=""
+              id="country-flag"
+              class="h-[150px] w-auto object-contain"
+            />
+          </div>
+          <h2
+            id="flag-title"
+            class="font-bold text-2xl text-center mt-2 text-gray-800"
+          ></h2>
         </div>
+
+        <!-- Image Container -->
         <div
-          class="h-[50vh] w-full sm:w-3/5 border-black border-2 border-t-0 sm:border-l-0 sm:border-2 m-0 flex justify-center items-center"
+          id="image-container"
+          class="w-full sm:w-3/5 h-[60vh] p-4 border-2 border-black sm:border-l-0 border-t-0 sm:border-t-2 flex justify-center items-center"
         >
-          <figure>
-            <img src="" alt="country-image" id="country-image" />
-          </figure>
+          <img
+            src=""
+            alt=""
+            id="country-image"
+            class="w-full p-[20px] max-w-[500px] h-auto object-cover h-auto rounded-md"
+          />
         </div>
       </div>
 
@@ -143,7 +160,7 @@
     <!-- End of main body-->
 
     <footer
-      class="p-[50px] pb-[30px] font-[Segoe_UI] text-[#f8f8f8] bold bg-stone-900 max-w-full my-0 mx-auto leading-none"
+      class="px-[100px] pt-[50px] pb-[30px] font-[Segoe_UI] text-[#f8f8f8] bold bg-stone-900 max-w-full my-0 mx-auto leading-none"
     >
       <div class="flex flex-col gap-5 justify-between sm:flex-row">
         <div>
@@ -151,7 +168,9 @@
             Quick Links
           </h3>
           <ul>
-            <li class="text-white text-sm my-[16px]">
+            <li
+              class="text-white text-sm my-[16px]"
+            >
               <a href="index.html">Explore</a>
             </li>
             <li class="text-white text-sm my-[16px]">
@@ -296,6 +315,6 @@
       </p>
     </footer>
 
-    <script src="scripts/script.js" defer></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
