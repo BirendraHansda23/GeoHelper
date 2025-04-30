@@ -89,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll(".title")
         .forEach((title) =>
           title.classList.add(
-            "w-2/5",
+            "w-1/2",
+            "md:w-2/5",
             "font-semibold",
             "text-right",
             "p-3",
@@ -102,7 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll(".data")
         .forEach((data) =>
           data.classList.add(
-            "w-3/5",
+            "w-1/2",
+            "md:w-3/5",
             "font-normal",
             "text-left",
             "p-3",
