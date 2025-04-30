@@ -91,13 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
           title.classList.add(
             "w-2/5",
             "font-semibold",
-            "text-md",
             "text-right",
             "p-3",
             "bg-gradient-to-l",
             "from-orange-50",
-            "to-amber-50",
-            "text-black"
+            "to-[#f9f9f3]"
           )
         );
       document
@@ -106,13 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
           data.classList.add(
             "w-3/5",
             "font-normal",
-            "text-md",
             "text-left",
             "p-3",
             "bg-gradient-to-r",
             "from-orange-50",
-            "to-amber-50",
-            "text-black"
+            "to-[#f9f9f3]"
           )
         );
     }
