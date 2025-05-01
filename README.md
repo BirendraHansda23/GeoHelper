@@ -6,17 +6,6 @@
 
 ---
 
-## 📖 Table of Contents
-1. [Project Description](#project-description)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Features](#features)
-5. [Tech Stack](#tech-stack)
-6. [Screenshots](#screenshots)
-7. [Credits](#credits)
-
----
-
 ## 🧾 Project Description
 
 **GeoHelper** is a lightweight, efficient web app that fetches and displays real-time country information using the **REST Countries API** and scenic imagery from the **Pexels API**. Just type in a country's name and you'll instantly get essential details like:
