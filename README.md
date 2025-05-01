@@ -75,10 +75,10 @@ No additional dependencies are required. Just a browser!
 ## 🖼️ Screenshots
 
 | Desktop View
-  ![Desktop ss](https://github.com/user-attachments/assets/8df27318-ba5c-4ad2-b3c9-af0ace0e8b52)
+  ![Desktop ss](https://github.com/user-attachments/assets/8df27318-ba5c-4ad2-b3c9-af0ace0e8b52| width=100)
 
 | Mobile View
-  ![Mobile SS](https://github.com/user-attachments/assets/eea5d981-7cd2-404e-9339-aecefa340c13)
+  ![Mobile SS](https://github.com/user-attachments/assets/eea5d981-7cd2-404e-9339-aecefa340c13| width=100)
 
 
 
