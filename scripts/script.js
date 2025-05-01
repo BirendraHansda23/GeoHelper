@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         giveOutput(countryData);
       } catch (error) {
-        alert("Please enter a valid name");
+        alert("Please enter a valid country name");
         console.error("Error:", error);
       }
     }
