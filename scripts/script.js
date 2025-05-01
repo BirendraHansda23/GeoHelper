@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const outputTable = document.getElementById("output-table");
         const outputContainer = document.getElementById("output-container");
         const countryFlag = document.getElementById("country-flag");
-        const imageElement = document.getElementById("country-image"); // ✅ Make sure this is in your HTML
+        const imageElement = document.getElementById("country-image"); //
 
         const apiUrl = `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`;
         const response = await fetch(apiUrl);

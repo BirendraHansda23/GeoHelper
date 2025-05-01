@@ -27,20 +27,24 @@
   <body class="m-0 p-0 font-[Roboto]">
     <!-- Start of body -->
     <nav
-      class="px-3 py-2 text-[#f8f8f8] bg-stone-900 max-w-full my-0 mx-auto leading-none flex gap-3 justify-between items-center sm:flex-row"
+      class="h-[8vh] px-3 py-2 text-[#f8f8f8] bg-stone-900 max-w-full my-0 mx-auto leading-none flex gap-3 justify-between items-center sm:flex-row"
     >
-      <div class="font-[Segoe_UI] text-2xl md:text-3xl font-bold">
-        <a href="index.html">GEOHELPER.</a>
-      </div>
-      <div class="font-inter text-md md:text-lg">
-        <a target="_blank" href="https://github.com/BirendraHansda23/GeoHelper"
-          >About Project</a
-        >
-      </div>
+      <a
+        class="font-[Segoe_UI] text-2xl md:text-3xl font-bold"
+        href="index.html"
+        >GEOHELPER.</a
+      >
+
+      <a
+        class="font-inter text-md md:text-lg"
+        target="_blank"
+        href="https://github.com/BirendraHansda23/GeoHelper"
+        >About Project</a
+      >
     </nav>
 
     <!-- End of Header -->
-    <section
+    <!-- <section
       class="w-full my-0 mx-auto p-10 h-[60vh] md:h-[94vh] text-white bg-[url(/assets/images/continents.webp)] bg-cover bg-[center_70%] flex flex-col justify-center gap-5"
     >
       <div class="font-inter drop-shadow-stone-950 drop-shadow-2xl">
@@ -60,41 +64,44 @@
           >Explore
         </a>
       </div>
-    </section>
+    </section> -->
 
     <!-- End of Hero Section -->
 
     <section
-      class="relative max-w-full p-10 h-[80vh] md:h-[94vh] mx-auto flex justify-center items-center"
+      class="relative max-w-full p-8 h-[94vh] mx-auto flex justify-center items-center"
       id="country-search"
     >
       <div class="absolute -z-10">
         <picture>
-          <source srcset="/assets/images/earth.avif" type="image/webp" />
           <img
             src="/assets/images/earth.avif"
-            class="w-[100vw] h-[100vh] object-cover"
+            class="w-[100vw] h-[94vh] object-cover"
             alt="earth-background"
             loading="lazy"
           />
         </picture>
-        <div class="absolute inset-0 opacity-90 backdrop-blur-2xl"></div>
+        <div
+          class="absolute inset-0 opacity-90 bg-white/25 backdrop-blur-xl"
+        ></div>
       </div>
-      <div class="max-w-[500px] flex flex-col gap-4">
+      <div class="max-w-[500px] pb-5 flex flex-col gap-4">
         <h2 class="font-[Trebuchet_MS] font-extrabold text-5xl md:text-6xl">
           Explore Countries
         </h2>
-        <p class="font-[Lucida_Sans] text-sm md:text-base font-extrabold">
-          Try India, Russia, or Japan.
-        </p>
 
         <form id="searchForm" action="#output-container">
+          <p
+            class="font-[Lucida_Sans] mb-1 text-sm md:text-base font-extrabold"
+          >
+            Try India, Russia, or Japan.
+          </p>
           <div
-            class="search-box w-[100%] flex items-center justify-between border-2 border-gray-200 rounded-lg bg-white overflow-hidde drop-shadow-sm drop-shadow-stone-700"
+            class="w-[100%] md:w-[78%] flex items-center justify-between border-2 border-gray-200 rounded-lg bg-white overflow-hidden drop-shadow-sm drop-shadow-stone-700"
           >
             <input
               type="search"
-              class="search-input p-[12px] text-base md:text-xl border-0 w-full"
+              class="search-input px-3 outline-none border-none text-base md:text-lg border-0 w-full"
               placeholder="Enter country name..."
               name="country"
               id="nameInput"
@@ -102,20 +109,19 @@
             />
             <button
               type="submit"
-              class="search-button bg-lime-300 p-4 rounded-r-lg contrast-80 hover:contrast-70 cursor-pointer"
+              class="search-button bg-lime-300 p-3 contrast-80 hover:contrast-70 cursor-pointer"
             >
               <img
                 src="/assets/images/search.svg"
                 alt="Search Icon"
-                height="24px"
-                width="24px"
+                class="h-[24px]"
               />
             </button>
           </div>
+          <p class="font-[Lucida_Sans] mt-1 text-sm md:text-base">
+            (Note: Please input correct names of the countries)
+          </p>
         </form>
-        <p class="font-[Lucida_Sans] text-sm md:text-base">
-          (Note: Please input correct names of the countries)
-        </p>
       </div>
     </section>
 
@@ -165,7 +171,7 @@
     <!-- End of main body-->
 
     <footer
-      class="px-[50px] pt-[50px] pb-[30px] font-[Segoe_UI] text-[#f8f8f8] bold bg-stone-900 max-w-full my-0 mx-auto leading-none"
+      class="px-[70px] pt-[50px] pb-[30px] font-[Segoe_UI] text-[#f8f8f8] bold bg-stone-900 max-w-full my-0 mx-auto leading-none"
     >
       <article class="flex flex-col gap-5 justify-between sm:flex-row">
         <div>
@@ -215,9 +221,6 @@
             Contact Me
           </h3>
           <ul>
-            <li class="text-white text-sm my-[16px]">
-              <a href="about.html">Meet the Dev</a>
-            </li>
             <li class="text-white text-sm my-[16px]">
               Mail:
               <a

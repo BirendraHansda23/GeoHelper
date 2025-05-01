@@ -4,3 +4,6 @@ designs/
 
 #ignore readme
 .readme.txt
+
+#ignore pages
+.index.html
