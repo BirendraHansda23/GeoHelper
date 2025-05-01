@@ -74,11 +74,13 @@ No additional dependencies are required. Just a browser!
 
 ## 🖼️ Screenshots
 
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Desktop]!(https://github.com/user-attachments/assets/1e0d3e47-94ba-45d9-b35c-a6658d399631)
-| ![Mobile]!(https://github.com/user-attachments/assets/4506d837-a534-48cd-a5dd-f4dc3b25f14d)
-|
+| Desktop View
+  ![Desktop ss](https://github.com/user-attachments/assets/8df27318-ba5c-4ad2-b3c9-af0ace0e8b52)
+
+| Mobile View
+  ![Mobile SS](https://github.com/user-attachments/assets/eea5d981-7cd2-404e-9339-aecefa340c13)
+
+
 
 ---
 
