@@ -75,14 +75,10 @@ No additional dependencies are required. Just a browser!
 ## 🖼️ Screenshots
 
 | Desktop View
-  ![Desktop ss](https://github.com/user-attachments/assets/8df27318-ba5c-4ad2-b3c9-af0ace0e8b52)
-  <img src="/designs/Desktop ss.png" width="100">
+  <img src="/designs/Desktop ss.png" width="800">
 
 | Mobile View
-  ![Mobile SS](https://github.com/user-attachments/assets/eea5d981-7cd2-404e-9339-aecefa340c13)
-  <img src="/designs/Mobile SS.png" width="100">
-
-
+  <img src="/designs/Mobile SS.png" width="800">
 
 ---
 
