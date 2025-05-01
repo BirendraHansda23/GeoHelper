@@ -1,5 +1,4 @@
 #ignore designs and assets files
-designs/
 .test.html
 
 #ignore readme
