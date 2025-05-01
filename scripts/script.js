@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchData(countryName) {
       try {
         const flagTitle = document.getElementById("flag-title");
-        const outputTable = document.getElementById("output-table");
-        const outputContainer = document.getElementById("output-container");
         const countryFlag = document.getElementById("country-flag");
         const imageElement = document.getElementById("country-image"); //
 
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         flagTitle.textContent = `${country.name.common}`;
 
-        // Fetch one random image
+        // Fetch random image
         const images = await fetchCountryImages(country.name.common);
         if (images.length > 0) {
           const randomIndex = Math.floor(Math.random() * images.length);
@@ -61,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         giveOutput(countryData);
       } catch (error) {
+        alert("Please enter a valid name");
         console.error("Error:", error);
       }
     }
