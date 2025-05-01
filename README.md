@@ -1,8 +1,6 @@
 # 🌍 GeoHelper - Your Lightweight Geographic Assistant
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-black)](https://your-vercel-deployment-url.vercel.app)
-[![Built with JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)]()
-[![Open Source](https://img.shields.io/badge/Open--Source-Yes-brightgreen)]()
+[![Live Site](https://img.shields.io/badge/Live%20Site-GeoHelper-black?style=for-the-badge&logo=vercel)](https://geo-helper-sepia.vercel.app/)
 
 ---
 
