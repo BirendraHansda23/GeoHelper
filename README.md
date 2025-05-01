@@ -74,10 +74,10 @@ No additional dependencies are required. Just a browser!
 
 ## 🖼️ Screenshots
 
-###Desktop View
+<h1>Desktop View</h1>
 <img src="/designs/Desktop ss.png" width="800">
 
-###Mobile View
+<h1>Mobile View</h1>
 <img src="/designs/Mobile SS.png" width="800">
 
 ---
